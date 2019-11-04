@@ -20,8 +20,8 @@
 <b>for Travel and Bookings</b> the file bookings_model.npz should be used<br>
 <b>for Customer Support</b> the file support_model.npz should be used<br>
 <b>for General</b> the file normal_model.npz should be used<br>
-<b> Step 2:</b> The model can be trained by navigating to the training folder by executing the command <b>cd training/</b> and then installing all the necessary python packages by running the command <b>pip3 install -r requirements.txt</b>
-
-
+<b> Step 2:</b> The model can be trained by navigating to the training folder by executing the command <b>cd training/</b> and then installing all the necessary python packages by running the command <b>pip3 install -r requirements.txt</b><br>
+<b> Step 3:</b> The model will start training by running the command <b>python3 main.py</b><br>
+<b><i>PLEASE NOTE: THE MODEL SHOULD ONLY BE TRAINED ON A MACHINE WITH GPU FOR BEST PERFORMANCES. GOOGLE CLOUD PLATFORM GPU ENABLED MACHINE WAS USED FOR TRAINING OF THIS MODEL</i></b>
 
 
