@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 8916,
-  "expoServerNgrokUrl": "https://tj-g8v.sahajdhingra26.client.exp.direct",
-  "packagerNgrokUrl": "https://packager.tj-g8v.sahajdhingra26.client.exp.direct",
-  "ngrokPid": 8924
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
