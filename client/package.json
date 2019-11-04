@@ -13,7 +13,7 @@
     "expo-font": "^6.0.1",
     "expo-linear-gradient": "^6.0.0",
     "expo-localization": "6.0.0",
-    "lodash": "4.17.11",
+    "lodash": "4.17.13",
     "native-base": "^2.10.0",
     "prop-types": "15.6.2",
     "react": "16.8.3",
