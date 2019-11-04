@@ -25,7 +25,7 @@
 <b><i>PLEASE NOTE: THE MODEL SHOULD ONLY BE TRAINED ON A MACHINE WITH GPU FOR BEST PERFORMANCES. GOOGLE CLOUD PLATFORM GPU ENABLED MACHINE WAS USED FOR TRAINING OF THIS MODEL</i></b>
 
 <h4>Running the server</h4>
-<b> STEP 1:</b> The server can be run by navigating to the server folder by executing the command <b>cd server</b> and installing the flask by executing <b>pip3 install flask</b> then installing all the necessary python packages by running the command <b>pip3 install -r requirements.txt</b><br>. Also, in this case another package called as PyMongo has to be installed by executing the command <b>pip3 install pymongo</b>
+<b> STEP 1:</b> The server can be run by navigating to the server folder by executing the command <b>cd server</b> and installing the flask by executing <b>pip3 install flask</b> then installing all the necessary python packages by running the command <b>pip3 install -r requirements.txt</b>Also, in this case another package called as PyMongo has to be installed by executing the command <b>pip3 install pymongo</b>
 <b> STEP 2:</b> The database can be created by creating an account on  <a href ="https://mlab.com/">Mlab</a> and upating the MONGO_URI inside the server/main.py file.
 <b> STEP 3:</b> Run the server by executing <b>pyhton3 main.py</b>
 
