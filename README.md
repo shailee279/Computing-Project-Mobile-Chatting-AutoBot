@@ -2,7 +2,7 @@
 <h3>Submitted by</h3>
 <h4>Sahaj Dhingra 960448</h4> 
 <h4>Hetal Shah 965690</h4> 
-<h4>Shailee Swapnil 952247</h4>
+<h4>Swapnil Shailee 952247</h4>
 
 <h3>Instructions to run</h3>
 <h4>Mobile App</h4>
@@ -27,6 +27,6 @@
 <h4>Running the server</h4>
 <b> STEP 1:</b> The server can be run by navigating to the server folder by executing the command <b>cd server</b> and installing the flask by executing <b>pip3 install flask</b> then installing all the necessary python packages by running the command <b>pip3 install -r requirements.txt</b> Also, in this case another package called as PyMongo has to be installed by executing the command <b>pip3 install pymongo</b><br>
 <b> STEP 2:</b> The database can be created by creating an account on  <a href ="https://mlab.com/">Mlab</a> and upating the MONGO_URI inside the server/main.py file.<br>
-<b> STEP 3:</b> Run the server by executing <b>pyhton3 main.py</b>
+<b> STEP 3:</b> Run the server by executing <b>python3 main.py</b>
 
 
