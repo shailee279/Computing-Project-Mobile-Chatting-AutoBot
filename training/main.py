@@ -10,6 +10,9 @@ from tensorlayer.models.seq2seq_with_attention import Seq2seqLuongAttention
 import os
 
 
+'''
+Load metadata, training , test and validation sets
+'''
 def initialise(dataset):
     metadata, idx_q, idx_a = data.load_data(PATH='data/{}/'.format(dataset))
     (trainingX, trainingY), (testingX, testingY), (validatingX, validatingY) = data.split_dataset(idx_q, idx_a)
@@ -32,7 +35,7 @@ if __name__ == "__main__":
     # Parameters
     src_len = len(trainingX)
     tgt_len = len(trainingY)
-
+    #sequence to sequence require source and target sequences of equal length
     assert src_len == tgt_len
 
     batch_size = 32
@@ -59,7 +62,9 @@ if __name__ == "__main__":
     vocabulary_size = vocab_size_src
     
 
-
+    '''
+    Function to find predictions
+    '''
     def inference(seed, top_n):
         model_.eval()
         seed_id = [word_to_index.get(w, unk_id) for w in seed.split(" ")]
@@ -73,6 +78,7 @@ if __name__ == "__main__":
         return sentence
 
     decoder_seq_length = 20
+    #initialise model
     model_ = Seq2seq(
         decoder_seq_length = decoder_seq_length,
         cell_enc=tf.keras.layers.GRUCell,
@@ -81,11 +87,13 @@ if __name__ == "__main__":
         n_units=256,
         embedding_layer=tl.layers.Embedding(vocabulary_size=vocabulary_size, embedding_size=emb_dim),
         )
-
+     
+    
     optimizer = tf.optimizers.Adam(learning_rate=0.001)
     model_.train()
-
+    
     user_inputs = ["My phone shows a black screen.","I want to install Lightroom Classic"]
+    #train 
     for epoch in range(num_epochs):
         model_.train()
         trainingX, trainingY = shuffle(trainingX, trainingY, random_state=0)
@@ -105,7 +113,8 @@ if __name__ == "__main__":
                 output = model_(inputs = [X, _decode_seqs])
                 
                 output = tf.reshape(output, [-1, vocabulary_size])
-              
+                
+		#calculates loss
                 loss = cross_entropy_seq_with_mask(logits=output, target_seqs=_target_seqs, input_mask=_target_mask)
 
                 grad = tape.gradient(loss, model_.all_weights)
@@ -123,7 +132,7 @@ if __name__ == "__main__":
             for i in range(top_n):
                 sentence = inference(seed, top_n)
                 print(" >", ' '.join(sentence))
-
+        #save weights
         tl.files.save_npz(model_.all_weights, name='model.npz')
 
 
